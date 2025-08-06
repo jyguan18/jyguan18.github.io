@@ -33,7 +33,9 @@ const HomePage: React.FC<HomePageProps> = ({ setPage }) => {
         </div>
 
         <div className="space-y-4 bg-lavender/50 rounded-xl p-6">
-          <h2 className="text-2xl font-semibold text-gray">What I Do</h2>
+          <h2 className="text-2xl font-semibold text-gray">
+            Background/Interests
+          </h2>
           <ul className="mx-auto max-w-xl space-y-3 text-base text-gray-300">
             <li className="flex items-center justify-center gap-3">
               <Gamepad2 className="w-5 h-5 text-blush mt-0.5" />

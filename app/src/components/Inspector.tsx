@@ -42,22 +42,26 @@ const Inspector: React.FC<InspectorProps> = ({ project }) => {
 
         {/* Links */}
         <div className="flex space-x-3 pt-2 font-mono">
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blush underline hover:text-blush/70"
-          >
-            GitHub
-          </a>
-          <a
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blush underline hover:text-blush/70"
-          >
-            Demo
-          </a>
+          {project.github ? (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blush underline hover:text-blush/70"
+            >
+              GitHub
+            </a>
+          ) : null}
+          {project.demo ? (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blush underline hover:text-blush/70"
+            >
+              Demo
+            </a>
+          ) : null}
         </div>
       </div>
     </div>
