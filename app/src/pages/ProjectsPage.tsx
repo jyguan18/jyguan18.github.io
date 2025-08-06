@@ -17,14 +17,7 @@ export interface Project {
   category: string;
 }
 
-const categories = [
-  "All",
-  "Games",
-  "USD",
-  "Computer Graphics",
-  "Rendering",
-  "Models",
-];
+const categories = ["All", "Games", "Computer Graphics", "Rendering", "Models"];
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
