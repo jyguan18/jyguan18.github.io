@@ -27,9 +27,8 @@ const HomePage: React.FC<HomePageProps> = ({ setPage }) => {
           <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
             I'm a Master's student at the University of Pennsylvania studying
             Computer Graphics and Game Technology. With a background in Computer
-            Science from Drexel University, I specialize in real-time rendering,
-            interactive tools, and immersive experiences across VR, AR, and
-            games.
+            Science from Drexel University, I am an avid gamer, movie-lover, and
+            enjoy whitewater rafting!
           </p>
         </div>
 
@@ -63,7 +62,7 @@ const HomePage: React.FC<HomePageProps> = ({ setPage }) => {
             <li className="flex items-center justify-center gap-3">
               <BookOpenCheck className="w-5 h-5 text-blush mt-0.5" />
               <span>
-                Currently pursuing Salesforce AI Specialist certification
+                Currently pursuing a Salesforce AI Specialist certification
               </span>
             </li>
           </ul>

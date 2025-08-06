@@ -12,8 +12,8 @@ export interface Project {
   video?: string;
   photos?: string[];
   tools: string[];
-  github: string;
-  demo: string;
+  github?: string;
+  demo?: string;
   category: string;
 }
 
