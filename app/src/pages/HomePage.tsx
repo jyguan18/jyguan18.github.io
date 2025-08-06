@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Gamepad2,
-  Cpu,
   Hammer,
   Globe,
   BrainCircuit,

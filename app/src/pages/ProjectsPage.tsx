@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import TopToolbar from "../components/TopToolbar";
+import { useState } from "react";
 import SceneView from "../components/SceneView";
 import Inspector from "../components/Inspector";
 import ProjectsTab from "../components/ProjectsTab";

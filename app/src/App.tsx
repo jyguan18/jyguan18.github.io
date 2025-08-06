@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import TopToolbar from "./components/TopToolbar";
 import ProjectsPage from "./pages/ProjectsPage";
 import Modal from "./components/modals/Modal"; // Import your Modal component
-import { projects } from "./types/projects";
 import HomePage from "./pages/HomePage";
-import { Mail, Linkedin, Github, Phone, Twitter } from "lucide-react";
 import AboutContent from "./components/modals/AboutContent";
 import ContactContent from "./components/modals/ContactContent";
 
