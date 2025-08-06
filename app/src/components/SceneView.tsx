@@ -1,5 +1,5 @@
 // Scrollable gallery with thumbnails for multiple photos
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Project } from "../pages/ProjectsPage";
 
@@ -11,6 +11,10 @@ const SceneView: React.FC<SceneViewProps> = ({ project }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [project]);
 
   const hasPhotos = Array.isArray(project.photos) && project.photos.length > 0;
   const hasVideo =
