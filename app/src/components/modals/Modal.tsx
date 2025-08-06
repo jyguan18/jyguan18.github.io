@@ -4,9 +4,15 @@ interface ModalProps {
   title: string;
   children: React.ReactNode;
   onClose: () => void;
+  openFullscreen?: boolean;
 }
 
-const Modal: React.FC<ModalProps> = ({ title, children, onClose }) => {
+const Modal: React.FC<ModalProps> = ({
+  title,
+  children,
+  onClose,
+  openFullscreen,
+}) => {
   const [pos, setPos] = useState<{ x: number; y: number }>({
     x: window.innerWidth / 2,
     y: window.innerHeight / 2,
@@ -23,7 +29,7 @@ const Modal: React.FC<ModalProps> = ({ title, children, onClose }) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   // Fullscreen state
-  const [fullscreen, setFullscreen] = useState(false);
+  const [fullscreen, setFullscreen] = useState(openFullscreen ?? false);
 
   const onMouseDown = (e: React.MouseEvent) => {
     if (fullscreen) return; // no drag if fullscreen

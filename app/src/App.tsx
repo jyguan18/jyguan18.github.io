@@ -58,7 +58,11 @@ export default function App() {
       </div>
 
       {modalContent === "About" && (
-        <Modal title="About Me" onClose={() => setModalContent(null)}>
+        <Modal
+          title="About Me"
+          onClose={() => setModalContent(null)}
+          openFullscreen={true}
+        >
           <AboutContent />
         </Modal>
       )}

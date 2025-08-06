@@ -34,9 +34,9 @@ const HomePage: React.FC<HomePageProps> = ({ setPage }) => {
           </p>
         </div>
 
-        <div className="space-y-4">
-          <h2 className="text-2xl font-semibold text-lavender">What I Do</h2>
-          <ul className="mx-auto max-w-2xl space-y-3 text-base text-gray-300">
+        <div className="space-y-4 bg-lavender/50 rounded-xl p-6">
+          <h2 className="text-2xl font-semibold text-gray">What I Do</h2>
+          <ul className="mx-auto max-w-xl space-y-3 text-base text-gray-300">
             <li className="flex items-center justify-center gap-3">
               <Gamepad2 className="w-5 h-5 text-blush mt-0.5" />
               <span>
@@ -50,7 +50,7 @@ const HomePage: React.FC<HomePageProps> = ({ setPage }) => {
             <li className="flex items-center justify-center gap-3">
               <BrainCircuit className="w-5 h-5 text-blush mt-0.5" />
               <span>
-                Strong foundation in Computer Science (algorithms, systems, data
+                Computer Science foundations (algorithms, systems, data
                 structures)
               </span>
             </li>
@@ -71,7 +71,7 @@ const HomePage: React.FC<HomePageProps> = ({ setPage }) => {
         </div>
 
         <div className="space-y-4">
-          <h2 className="text-2xl font-semibold text-lavender">
+          <h2 className="text-2xl font-semibold text-gray">
             Featured Projects
           </h2>
           <p className="text-gray-300 max-w-md mx-auto">
