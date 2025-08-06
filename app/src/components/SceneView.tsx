@@ -2,9 +2,22 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Project } from "../pages/ProjectsPage";
+import VimeoPlayer from "./VimeoPlayer";
+import YouTubePlayer from "./YouTubePlayer";
 
 interface SceneViewProps {
   project: Project;
+}
+
+function isVimeoExternalVideo(videoSrc?: string): boolean {
+  return typeof videoSrc === "string" && videoSrc.includes("vimeo.com");
+}
+
+function isYTExternalVideo(videoSrc?: string): boolean {
+  return (
+    typeof videoSrc === "string" &&
+    (videoSrc.includes("youtube.com") || videoSrc.includes("youtu.be"))
+  );
 }
 
 const SceneView: React.FC<SceneViewProps> = ({ project }) => {
@@ -53,7 +66,11 @@ const SceneView: React.FC<SceneViewProps> = ({ project }) => {
       >
         {/* Gallery */}
         <div className="relative w-full">
-          {isVideo(galleryItems[currentIndex]) ? (
+          {project.video && isVimeoExternalVideo(galleryItems[currentIndex]) ? (
+            <VimeoPlayer video={project.video} />
+          ) : project.video && isYTExternalVideo(galleryItems[currentIndex]) ? (
+            <YouTubePlayer video={project.video} />
+          ) : isVideo(galleryItems[currentIndex]) ? (
             <>
               <div className="flex justify-center space-x-2 p-2">
                 <button
@@ -91,7 +108,7 @@ const SceneView: React.FC<SceneViewProps> = ({ project }) => {
               </div>
               <video
                 ref={videoRef}
-                src={project.video}
+                src={galleryItems[currentIndex]}
                 autoPlay
                 muted
                 loop
