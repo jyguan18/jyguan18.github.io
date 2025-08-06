@@ -15,7 +15,7 @@ type HomePageProps = {
 
 const HomePage: React.FC<HomePageProps> = ({ setPage }) => {
   return (
-    <div className="flex justify-center flex-grow">
+    <div className="flex justify-center flex-grow p-4">
       <div
         className="max-w-2xl mx-auto border-2 border-lavender bg-midnight rounded p-6 md:p-10 space-y-8 text-center
              overflow-y-auto max-h-[90vh]"

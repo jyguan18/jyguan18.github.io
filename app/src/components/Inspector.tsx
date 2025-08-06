@@ -1,15 +1,6 @@
 // src/components/Inspector.tsx
 import React from "react";
-
-export interface Project {
-  name: string;
-  description?: string;
-  video: string;
-  tools: string[];
-  github: string;
-  demo: string;
-  [key: string]: any; // Optional: allows for extra fields
-}
+import { Project } from "../pages/ProjectsPage";
 
 interface InspectorProps {
   project: Project;
@@ -17,11 +8,26 @@ interface InspectorProps {
 
 const Inspector: React.FC<InspectorProps> = ({ project }) => {
   return (
-    <div className="w-full px-2 sm:px-4">
-      <p className="text-sm sm:text-base text-gray font-mono bg-midnight border-2 border-lavender border-b-0 px-3 py-1 rounded-t-lg inline-block">
+    <div className="w-full">
+      <p className="text-sm text-gray font-mono bg-midnight border-2 border-lavender border-b-0 px-3 py-1 rounded-t-lg inline-block">
         Details
       </p>
-      <div className="bg-midnight rounded-tr-lg rounded-br-lg rounded-bl-lg p-4 text-gray-200  text-sm flex flex-col gap-3 max-w-xs h-full border-lavender border-2">
+      <div className="bg-midnight rounded-tr-lg rounded-br-lg rounded-bl-lg p-4 text-gray-200  text-sm flex flex-col gap-3 h-full border-lavender border-2">
+        <div className="font-bold">
+          <h1>{project.name}</h1>
+        </div>
+
+        {project.contributions && project.contributions.length > 0 && (
+          <div>
+            <div className="font-semibold font-mono">Contributions:</div>
+            <ul className="list-disc list-inside pl-4">
+              {project.contributions.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         <div>
           <div className="font-semibold font-mono">Tools Used:</div>
           <ul className="list-disc list-inside">

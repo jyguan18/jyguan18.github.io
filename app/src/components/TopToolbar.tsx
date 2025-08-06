@@ -37,7 +37,7 @@ const TopToolbar: React.FC<TopToolbarProps> = ({
   };
 
   return (
-    <div>
+    <div id="navbar">
       {/* Header */}
       <div className="bg-midnight text-blush flex justify-between items-center p-3 text-xl font-bold w-full relative z-10 border-b-2 border-lavender">
         <h1>Jackie Guan</h1>

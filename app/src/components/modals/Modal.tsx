@@ -4,19 +4,44 @@ interface ModalProps {
   title: string;
   children: React.ReactNode;
   onClose: () => void;
-  openFullscreen?: boolean;
+  size?: "small" | "medium" | "fullscreen";
+  zIndex?: number;
 }
 
 const Modal: React.FC<ModalProps> = ({
   title,
   children,
   onClose,
-  openFullscreen,
+  size = "small",
+  zIndex = 50,
 }) => {
+  const modalWidth = 600; // fixed width (matches style)
+  const modalHeight = 400; // fixed height
+
   const [pos, setPos] = useState<{ x: number; y: number }>({
     x: window.innerWidth / 2,
     y: window.innerHeight / 2,
   });
+
+  useEffect(() => {
+    const margin = 50;
+    const navbarHeight = document.getElementById("navbar")?.offsetHeight || 60;
+
+    const width = size === "medium" ? 1200 : modalWidth;
+    const height = size === "medium" ? 700 : modalHeight;
+
+    const minX = width / 2 + margin;
+    const maxX = window.innerWidth - width / 2 - margin;
+
+    const minY = navbarHeight + margin + height / 2;
+    const maxY = window.innerHeight - margin - height / 2;
+
+    const randomX = Math.floor(Math.random() * (maxX - minX) + minX);
+    const randomY = Math.floor(Math.random() * (maxY - minY) + minY);
+
+    setPos({ x: randomX, y: randomY });
+    setFullscreen(size === "fullscreen");
+  }, [size]);
 
   const [dragging, setDragging] = useState(false);
   const dragStart = useRef<{
@@ -29,10 +54,10 @@ const Modal: React.FC<ModalProps> = ({
   const modalRef = useRef<HTMLDivElement>(null);
 
   // Fullscreen state
-  const [fullscreen, setFullscreen] = useState(openFullscreen ?? false);
+  const [fullscreen, setFullscreen] = useState(size === "fullscreen");
 
   const onMouseDown = (e: React.MouseEvent) => {
-    if (fullscreen) return; // no drag if fullscreen
+    if (fullscreen) return;
 
     e.preventDefault();
     dragStart.current = {
@@ -91,27 +116,40 @@ const Modal: React.FC<ModalProps> = ({
     setFullscreen((f) => !f);
   };
 
-  // Styles for modal positioning and sizing
   const modalStyle = fullscreen
     ? {
         top: "50%",
         left: "50%",
-        width: "90vw",
-        height: "90vh",
+        width: "100vw",
+        height: "100vh",
         maxWidth: "none",
         maxHeight: "none",
         transform: "translate(-50%, -50%)",
         cursor: "default",
+        zIndex,
+      }
+    : size === "medium"
+    ? {
+        top: pos.y,
+        left: pos.x,
+        width: 1200,
+        height: 700,
+        maxWidth: "90vw",
+        maxHeight: "90vh",
+        transform: "translate(-50%, -50%)",
+        cursor: dragging ? "grabbing" : "default",
+        zIndex,
       }
     : {
         top: pos.y,
         left: pos.x,
-        width: "600px", // <- fixed width
-        height: "400px", // <- optional: fixed height
+        width: modalWidth,
+        height: modalHeight,
         maxWidth: "90vw",
         maxHeight: "80vh",
         transform: "translate(-50%, -50%)",
         cursor: dragging ? "grabbing" : "default",
+        zIndex,
       };
 
   return (
@@ -129,34 +167,35 @@ const Modal: React.FC<ModalProps> = ({
           <h2 className="text-gray-200 font-mono text-lg">{title}</h2>
 
           <div className="flex space-x-3">
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                toggleFullscreen();
-              }}
-              className="text-gray-400 hover:text-gray-200 focus:outline-none"
-              aria-label={fullscreen ? "Exit fullscreen" : "Fullscreen"}
-              title={fullscreen ? "Exit fullscreen" : "Fullscreen"}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
+            {size !== "fullscreen" ? (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleFullscreen();
+                }}
+                className="text-gray-400 hover:text-gray-200 focus:outline-none"
+                aria-label={fullscreen ? "Exit fullscreen" : "Fullscreen"}
+                title={fullscreen ? "Exit fullscreen" : "Fullscreen"}
               >
-                {fullscreen ? (
-                  <path d="M9 14H5v5h5v-4a1 1 0 011-1zM15 10h4V5h-5v4a1 1 0 001 1z" />
-                ) : (
-                  <>
-                    <path d="M4 4h6M4 4v6M20 20h-6M20 20v-6" />
-                    <path d="M20 4v4M20 4h-4M4 20v-4M4 20h4" />
-                  </>
-                )}
-              </svg>
-            </button>
-
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  {fullscreen ? (
+                    <path d="M9 14H5v5h5v-4a1 1 0 011-1zM15 10h4V5h-5v4a1 1 0 001 1z" />
+                  ) : (
+                    <>
+                      <path d="M4 4h6M4 4v6M20 20h-6M20 20v-6" />
+                      <path d="M20 4v4M20 4h-4M4 20v-4M4 20h4" />
+                    </>
+                  )}
+                </svg>
+              </button>
+            ) : null}
             <button
               onClick={(e) => {
                 e.stopPropagation();
