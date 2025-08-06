@@ -40,7 +40,9 @@ const TopToolbar: React.FC<TopToolbarProps> = ({
     <div id="navbar">
       {/* Header */}
       <div className="bg-midnight text-blush flex justify-between items-center p-3 text-xl font-bold w-full relative z-10 border-b-2 border-lavender">
-        <h1>Jackie Guan</h1>
+        <h1 onClick={() => handleClickMenu("Home")} className="cursor-pointer">
+          Jackie Guan
+        </h1>
         <button
           className="sm:hidden text-lavender"
           onClick={() => setMobileOpen(!mobileOpen)}

@@ -16,7 +16,7 @@ export interface Project {
   demo: string;
 }
 
-type Page = "Home" | "Projects";
+type Page = "Home" | "Projects" | "About";
 
 export default function App() {
   const [page, setPage] = useState<Page>("Home");
@@ -70,7 +70,7 @@ export default function App() {
         {page === "Projects" ? (
           <ProjectsPage />
         ) : (
-          <HomePage setPage={setPage} />
+          <HomePage setPage={setPage} openModal={openModal} />
         )}
       </div>
 
