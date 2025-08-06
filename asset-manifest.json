@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/jackieguan/static/css/main.ddf45bb7.css",
+    "main.js": "/jackieguan/static/js/main.8f04935c.js",
+    "static/js/453.1a16ed4e.chunk.js": "/jackieguan/static/js/453.1a16ed4e.chunk.js",
+    "index.html": "/jackieguan/index.html",
+    "main.ddf45bb7.css.map": "/jackieguan/static/css/main.ddf45bb7.css.map",
+    "main.8f04935c.js.map": "/jackieguan/static/js/main.8f04935c.js.map",
+    "453.1a16ed4e.chunk.js.map": "/jackieguan/static/js/453.1a16ed4e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ddf45bb7.css",
+    "static/js/main.8f04935c.js"
+  ]
+}
