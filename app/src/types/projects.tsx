@@ -20,7 +20,8 @@ export const projects: Project[] = [
     id: 2,
     name: "Mini-Minecraft",
     video: "https://vimeo.com/1052431663?share=copy",
-    description: "A .",
+    description:
+      "A Minecraft-inspired 3D game featuring procedural terrain generation, real-time physics, and custom water shaders.",
     contributions: [
       "A group project with a total of 3 people",
       "Implemented player physics, including smooth collision detection (using ray marching) and physics-based movement including swimming",
@@ -29,8 +30,6 @@ export const projects: Project[] = [
       "Additionally added noise, crosshair, and additional biomes using bilinear interpolation.",
     ],
     tools: ["OpenGL", "C++", "GLSL"],
-    github:
-      "https://github.com/CIS4600-Fall-2024/mini-minecraft-group-project-shared_ptr-jack",
     demo: "https://vimeo.com/1052431663?share=copy",
     category: "Computer Graphics",
   },
@@ -44,8 +43,6 @@ export const projects: Project[] = [
       "Created a raymarched Signed Distance Field model of an animated Togepi and Voltorb, which is integrated into the PBR pipeline",
     ],
     tools: ["OpenGL", "C++", "GLSL"],
-    github:
-      "https://github.com/CIS-4610-2025/homework-09-signed-distance-fields-jyguan18",
     demo: "/videos/sdfs.mp4",
     category: "Rendering",
   },
@@ -59,7 +56,6 @@ export const projects: Project[] = [
       "Obj importer and parser",
     ],
     tools: ["OpenGL", "C++", "GLSL"],
-    github: "https://github.com/CIS4600-Fall-2024/mesh-editor-project-jyguan18",
     demo: "/videos/mini-maya.mp4",
     category: "Computer Graphics",
   },
@@ -74,7 +70,6 @@ export const projects: Project[] = [
       "Created and hooked up the main menu UI",
     ],
     tools: ["Unreal Blueprints"],
-    github: "https://github.com/0cfernandes00/ExtremeExtermination",
     demo: "https://youtu.be/fYP_kxwYy1U",
     category: "Games",
   },
