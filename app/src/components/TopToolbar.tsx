@@ -6,10 +6,10 @@ const menuItems = {
   About: [],
   Projects: [],
   Contact: [],
-  Resume: ["Download PDF", "View Online"],
+  Resume: [],
 };
 
-type Page = "Home" | "Projects" | "About" | "Contact";
+type Page = "Home" | "Projects" | "About" | "Contact" | "Resume";
 
 type TopToolbarProps = {
   currentPage: Page;
@@ -25,7 +25,7 @@ const TopToolbar: React.FC<TopToolbarProps> = ({
 
   const handleClickMenu = (menu: string) => {
     setOpenMenu(null);
-    if (["Home", "Projects", "About", "Contact"].includes(menu)) {
+    if (["Home", "Projects", "About", "Contact", "Resume"].includes(menu)) {
       onPageChange(menu as Page);
     }
   };

@@ -7,7 +7,7 @@ import {
   BookOpenCheck,
 } from "lucide-react";
 
-type Page = "Home" | "Projects" | "About";
+type Page = "Home" | "Projects" | "About" | "Resume";
 
 type HomePageProps = {
   setPage: React.Dispatch<React.SetStateAction<Page>>;

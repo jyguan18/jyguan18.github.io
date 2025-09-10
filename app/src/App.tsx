@@ -5,6 +5,7 @@ import Modal from "./components/modals/Modal"; // Import your Modal component
 import HomePage from "./pages/HomePage";
 import AboutContent from "./components/modals/AboutContent";
 import ContactContent from "./components/modals/ContactContent";
+import ResumePage from "./pages/ResumePage";
 
 export interface Project {
   id: number;
@@ -16,7 +17,7 @@ export interface Project {
   demo: string;
 }
 
-type Page = "Home" | "Projects" | "About";
+type Page = "Home" | "Projects" | "About" | "Resume";
 
 export default function App() {
   const [page, setPage] = useState<Page>("Home");
@@ -69,6 +70,8 @@ export default function App() {
       <div className="flex flex-grow overflow-auto gap-4 text-gray-200 modal-scrollbar">
         {page === "Projects" ? (
           <ProjectsPage />
+        ) : page === "Resume" ? (
+          <ResumePage />
         ) : (
           <HomePage setPage={setPage} openModal={openModal} />
         )}
