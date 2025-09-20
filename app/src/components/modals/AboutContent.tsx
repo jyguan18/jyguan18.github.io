@@ -30,12 +30,12 @@ const AboutContent = () => (
 
     <div className="relative flex flex-wrap justify-center mx-auto gap-6">
       {[
-        "group3.JPG",
+        "group3.jpg",
         "jackie1.jpg",
-        "group2.JPG",
-        "jackie2.JPG",
-        "group1.JPG",
-        "jackie3.JPG",
+        "group2.jpg",
+        "jackie2.jpg",
+        "group1.jpg",
+        "jackie3.jpg",
       ].map((fileName, i) => (
         <img
           key={i}
