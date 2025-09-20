@@ -36,14 +36,14 @@ export const projects: Project[] = [
   {
     id: 3,
     name: "PBR Shader and SDF Model",
-    video: "/videos/sdfs.mp4",
+    video: "https://youtu.be/b4yH-FlUmEs",
     description:
       "An OpenGL Shader with plastic/metallic BRDFs and pre-computed irradiance.",
     contributions: [
       "Created a raymarched Signed Distance Field model of an animated Togepi and Voltorb, which is integrated into the PBR pipeline",
     ],
     tools: ["OpenGL", "C++", "GLSL"],
-    demo: "/videos/sdfs.mp4",
+    demo: "https://youtu.be/b4yH-FlUmEs",
     category: "Rendering",
   },
   {
@@ -123,7 +123,7 @@ export const projects: Project[] = [
   {
     id: 9,
     name: "Rasterizer",
-    video: "/videos/rasterizer.mp4",
+    video: "https://youtu.be/1gdbG4X72EU",
     description: "A 2D and 3D rasterization",
     contributions: [
       "2D rasterization including triangulation, pixel row intersection, z-buffering, and barycentric interpolation",
@@ -132,7 +132,7 @@ export const projects: Project[] = [
       "Implemented Anti-Aliasing up to 16x for a smoother visual quality",
     ],
     tools: ["C++", "OpenGL"],
-    demo: "/videos/rasterizer.mp4",
+    demo: "https://youtu.be/1gdbG4X72EU",
     category: "Computer Graphics",
   },
   {
