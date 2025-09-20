@@ -49,14 +49,14 @@ export const projects: Project[] = [
   {
     id: 4,
     name: "Mini-Maya",
-    video: "/videos/mini-maya.mp4",
+    video: "https://youtu.be/BrQ1H4bIxw4",
     description: "A half-edge mesh data structure to create a mesh editor.",
     contributions: [
       "Modify mesh topology to add vertices, triangulating faces, changing vertex and face colors, using Catmull-Clark subdivision for mesh smoothing and extruding face",
       "Obj importer and parser",
     ],
     tools: ["OpenGL", "C++", "GLSL"],
-    demo: "/videos/mini-maya.mp4",
+    demo: "https://youtu.be/BrQ1H4bIxw4",
     category: "Computer Graphics",
   },
   {
@@ -110,14 +110,14 @@ export const projects: Project[] = [
   {
     id: 8,
     name: "OpenGL Fun",
-    video: "/videos/noise.mp4",
+    video: "https://youtu.be/2LmAHTW10-g",
     description: "Implemented various surface shaders",
     contributions: [
       "Implemented shaders for reflections and deformations",
       "Impelmented post-process shaders including Gaussian blur and Sobel",
     ],
     tools: ["C++", "OpenGL", "GLSL"],
-    demo: "/videos/noise.mp4",
+    demo: "https://youtu.be/2LmAHTW10-g",
     category: "Computer Graphics",
   },
   {
