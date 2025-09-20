@@ -13,8 +13,8 @@ public\logo512.png
 public\manifest.json
 public\robots.txt
 public\images\jackie1.jpg
-public\images\jackie2.JPG
-public\images\jackie3.JPG
+public\images\jackie2.jpg
+public\images\jackie3.jpg
 src\App.css
 src\App.test.tsx
 src\App.tsx

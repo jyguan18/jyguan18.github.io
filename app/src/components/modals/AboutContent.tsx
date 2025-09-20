@@ -39,7 +39,7 @@ const AboutContent = () => (
       ].map((fileName, i) => (
         <img
           key={i}
-          src={`${process.env.PUBLIC_URL}/images/${fileName}`}
+          src={`/images/${fileName}`}
           alt={`Jackie photo ${i + 1}`}
           className={`w-40 h-40 rounded-lg object-cover border-2 shadow-md transition-transform duration-500 cursor-pointer relative
         ${i % 2 === 0 ? "rotate-2" : "-rotate-2"}
