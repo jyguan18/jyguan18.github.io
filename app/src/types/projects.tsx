@@ -21,7 +21,7 @@ export const projects: Project[] = [
     name: "Mini-Minecraft",
     video: "https://vimeo.com/1052431663?share=copy",
     description:
-      "A Minecraft-inspired 3D game featuring procedural terrain generation, real-time physics, and custom water shaders.",
+      "A Minecraft-inspired 3D game featuring procedural terrain generation, player physics, and custom water shaders.",
     contributions: [
       "A group project with a total of 3 people",
       "Implemented player physics, including smooth collision detection (using ray marching) and physics-based movement including swimming",
@@ -50,7 +50,8 @@ export const projects: Project[] = [
     id: 4,
     name: "Mini-Maya",
     video: "https://youtu.be/BrQ1H4bIxw4",
-    description: "A half-edge mesh data structure to create a mesh editor.",
+    description:
+      "Built a custom mesh editor using a half-edge data structure, enabling mesh manipulation, smoothing, and visualization with real-time OpenGL rendering.",
     contributions: [
       "Modify mesh topology to add vertices, triangulating faces, changing vertex and face colors, using Catmull-Clark subdivision for mesh smoothing and extruding face",
       "Obj importer and parser",
@@ -111,7 +112,8 @@ export const projects: Project[] = [
     id: 8,
     name: "OpenGL Fun",
     video: "https://youtu.be/2LmAHTW10-g",
-    description: "Implemented various surface shaders",
+    description:
+      "Implemented various surface shaders to create dynamic visual effects, including vertex deformations and post-processing effects for enhanced graphics realism.",
     contributions: [
       "Implemented shaders for reflections and deformations",
       "Impelmented post-process shaders including Gaussian blur and Sobel",
@@ -148,7 +150,7 @@ export const projects: Project[] = [
       "/images/projects/mcpt7.png",
       "/images/projects/mcpt8.png",
     ],
-    description: "A real-time shader-based path tracer",
+    description: "A real-time shader-based path tracer.",
     contributions: [
       "Naive, direct and full lighting integrators with multiple importance sampling",
       "Implemented a variety of material BSDFs including specular, transmissive, microfacets",
